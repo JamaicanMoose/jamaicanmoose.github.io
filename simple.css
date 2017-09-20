@@ -1,0 +1,95 @@
+body {
+        background-color: #0E0B16;
+        color: #ffffff;
+        font-family: 'Space Mono', monospace;
+}
+
+.wrapper {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        display: grid;
+        justify-content: stretch;
+        align-content: stretch;
+        grid-template-columns: .33fr .33fr .33fr;
+        grid-auto-rows: 33.3%;
+}
+
+.button {
+        margin: 10px;
+        background-color: #4717F6;
+        padding: 12px 28px;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 15px;
+
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+}
+
+.button:hover{
+        background-color: #A239CA;
+        color: white;
+}
+
+.button:hover > #resume_text {
+        display: block;
+}
+
+#resume_text {
+        display: none;
+        background-color: white;
+        transition: all 0.5s ease;
+        width: 40px;
+}
+
+.center_text {
+        text-align: center;
+}
+
+.h_center {
+        margin: auto;
+        border: 3px solid #73AD21;
+        padding-left:10px;
+        padding-right:10px;
+        text-align: center;
+}
+
+.box_image {
+        border-radius: 8px;
+        max-width: 10%;
+        height: auto;
+}
+
+/* Grid Handling */
+
+.col_1 {
+        grid-column: 1 / 2;
+}
+
+.col_2 {
+        grid-column: 2 / 3;
+}
+
+.col_3 {
+        grid-column: 3 / 4;
+}
+
+.row_1 {
+        grid-row: 1 / 2;
+}
+
+.row_2 {
+        grid-row: 2 / 3;
+}
+
+.row_3 {
+        grid-row: 3 / 4;
+}
+
+.row_1_2 {
+        grid-row: 1 / 3;
+}
