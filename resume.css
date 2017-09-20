@@ -1,14 +1,15 @@
 body {
+        max-width: 8.5in;
+        margin: auto;
+}
+
+/* */
+.wrapper {
         font-family: 'Belleza', sans-serif;
         margin-left: 6%;
         margin-right: 6%;
 }
 
-hr {
-
-}
-
-/* */
 .section {
         
 }
