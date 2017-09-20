@@ -1,6 +1,53 @@
 body {
-    font-family: 'Belleza', sans-serif;
-    padding-left: 6%;
-    padding-right: 6%;
+        font-family: 'Optima', sans-serif;
+        margin-left: 6%;
+        margin-right: 6%;
 }
 
+hr {
+
+}
+
+/* */
+.section {
+        
+}
+
+/* Style & Sizing */
+.word_underbar {
+        margin-top: 0px;
+        margin-bottom: .05em;
+}
+
+.italic {
+        font-style: italic;
+}
+
+.bold {
+        font-weight: bold;
+}
+
+.size_1 {
+        font-size: 1em;
+}
+
+.size_2 {
+        font-size: 2em;
+}
+
+/* Alignment */
+.center {
+        text-align: center;
+}
+
+.right {
+        text-align: right;
+}
+
+.left {
+        text-align: left;
+}
+
+.float_right {
+        float: right;
+}
