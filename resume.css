@@ -1,11 +1,14 @@
 body {
         max-width: 8.5in;
         margin: auto;
+        padding: 0;
+        /*border: medium solid black;*/
 }
 
 /* */
 .wrapper {
         font-family: 'Belleza', sans-serif;
+        margin-top: 2%;
         margin-left: 6%;
         margin-right: 6%;
 }
@@ -16,8 +19,8 @@ body {
         margin-bottom: .05em;
 }
 
-.nopad {
-        padding: 0;
+.top_margin {
+        margin-top: 1em;
 }
 
 .italic {
@@ -29,7 +32,7 @@ body {
 }
 
 .size_1 {
-        font-size: 1em;
+        font-size: .9em;
 }
 
 .size_2 {
