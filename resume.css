@@ -16,6 +16,10 @@ body {
         margin-bottom: .05em;
 }
 
+.nopad {
+        padding: 0;
+}
+
 .italic {
         font-style: italic;
 }
