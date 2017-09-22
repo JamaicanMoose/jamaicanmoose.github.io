@@ -16,26 +16,6 @@ h1 {
         font-family: 'Fjalla One', sans-serif;
 }
 
-.content:before {
-        content: "";
-        position: fixed;
-        left: 0;
-        right: 0;
-        z-index: -1;
-  
-        display: block;
-        background-image: url('galapagos_volcano.jpg');
-        width: 1200px;
-        height: 800px;
-        background-repeat: no-repeat;
-  
-        -webkit-filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
-        filter: blur(5px);
-}
-
 .gridwrapper {
         display: grid;
         height: 100fr;
