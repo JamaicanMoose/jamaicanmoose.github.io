@@ -1,28 +1,37 @@
 body {
+        height: 100vh;
+        width: 100vw;
         background-color: #0E0B16;
         color: #ffffff;
-        font-family: 'Space Mono', monospace;
+        /*font-family: 'Space Mono', monospace;*/
+        font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+        height: 100%;
+        width: 100%;
+}
+
+h1 {
+        font-family: 'Fjalla One', sans-serif;
 }
 
 .gridwrapper {
-        height: 100vh;
-        border: medium solid white;
+        display: grid;
+        height: 100fr;
+        width: 100fr;
         margin-top: auto;
         margin-bottom: auto;
-
         display: grid;
-        /*justify-content: stretch;*/
         align-content: stretch;
         grid-template-columns: .33fr .33fr .33fr;
-        grid-template-rows: .33fr .33fr .33fr;
+        grid-template-rows: 1fr;
 }
 
-.supergrid {
-        display: grid;
-}
-
-.subgrid {
-        display: subgrid;
+.flex_parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 }
 
 .button {
@@ -35,8 +44,6 @@ body {
         text-decoration: none;
         display: inline-block;
         border-radius: 15px;
-
-        /* -webkit-transition-duration: 0.4s; */
         transition-duration: 0.4s;
 }
 
@@ -45,40 +52,19 @@ body {
         color: white;
 }
 
-#resume_text {
-        display: none;
-        background-color: white;
-        transition: all 0.5s ease;
-        width: 40px;
-}
-
 .center_text {
         text-align: center;
-}
-
-.h_center {
-        margin: auto;
-        border: 3px solid #73AD21;
-        padding-left:10px;
-        padding-right:10px;
-        text-align: center;
-}
-
-.box_image {
-        border-radius: 8px;
-        max-width: 10%;
-        height: auto;
 }
 
 .box {
         border: medium solid white;
 }
 
-.inl_t_blo {
-        display: block;
+.img_container {
+        width: 100%;
 }
 
-/* Grid Handling */
+/* Grid Handling Thirds*/
 
 .col_1 {
         grid-column: 1 / 2;
@@ -90,24 +76,4 @@ body {
 
 .col_3 {
         grid-column: 3 / 4;
-}
-
-.col_1_3 {
-        grid-column: 1 / 4;
-}
-
-.row_1 {
-        grid-row: 1 / 2;
-}
-
-.row_2 {
-        grid-row: 2 / 3;
-}
-
-.row_3 {
-        grid-row: 3 / 4;
-}
-
-.row_1_2 {
-        grid-row: 1 / 3;
 }
