@@ -14,6 +14,7 @@ body {
 
 h1 {
         font-family: 'Fjalla One', sans-serif;
+        font-size: 3em;
 }
 
 .gridwrapper {
@@ -46,7 +47,7 @@ h1 {
 
 .social_button {
         position: absolute;
-        margin: 10px;
+        margin: .5em;
         width: 2em;
         height: 2em;
         border: 0;
@@ -64,17 +65,19 @@ h1 {
 }
 
 .button {
-        margin: 10px;
+        margin: .5em;
         background-color: #ffffff;
         /* #4717F6 */
-        padding: 12px 28px;
-        font-size: 16px;
+        /*padding: 12px 28px;*/
+        padding: .6em 1.3em;
+        /*font-size: 16px; */
+        font-size: 1em;
         /* color: white; */
         color: #0E0B16;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        border-radius: 5px;
+        border-radius: .25em;
         transition-duration: 0.4s;
 }
 
