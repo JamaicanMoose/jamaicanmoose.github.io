@@ -42,8 +42,6 @@ h2 {
         margin-top: auto;
         margin-bottom: auto;
         align-content: stretch;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
 }
 
 .flex_parent_col {
@@ -90,19 +88,14 @@ h2 {
 }
 
 .button {
-        height: 1.3em;
+        /*height: 1.3em;*/
         margin: .5em;
         background-color: #ffffff;
-        /* #4717F6 */
-        /*padding: 12px 28px;*/
         padding: .6em 1.3em;
-        /*font-size: 16px; */
         font-size: 1em;
-        /* color: white; */
         color: #0E0B16;
         text-align: center;
         text-decoration: none;
-        /*display: inline-block;*/
         border-radius: .25em;
         transition-duration: 0.2s;
 }
