@@ -1,0 +1,32 @@
+.flex_header {
+    height: 100%;
+}
+
+.title_box {
+    flex-grow: 7;
+    margin-left: 2em;
+}
+
+.title {
+    font-size: 2em;
+}
+
+
+.nav {
+    flex-grow: 1;
+}
+
+.sidebar {
+    flex-grow: 2;
+    flex-basis: 20%;
+}
+
+.content {
+    flex-grow: 2;
+    flex-basis: 60%;
+    justify-content: center;
+}
+
+.content_element {
+    margin-top: 2em;
+}

@@ -16,8 +16,13 @@ body {
         margin: 0;
         height: 100vh;
         width: 100vw;
+        /*
         background-color: #0E0B16;
         color: #ffffff;
+        */
+        /*background-color: #FDFDFD;*/
+        background-color: #f7eaea;
+        color: #0E0B16;
         /*font-family: 'Space Mono', monospace;*/
         font-family: 'Montserrat', sans-serif;
 }
@@ -90,7 +95,8 @@ h2 {
 .button {
         /*height: 1.3em;*/
         margin: .5em;
-        background-color: #ffffff;
+        /*background-color: #ffffff;*/
+        background-color: inherit;
         padding: .6em 1.3em;
         font-size: 1em;
         color: #0E0B16;
@@ -110,7 +116,7 @@ h2 {
 }
 
 .box {
-        border: medium solid white;
+        border: thin solid black;
 }
 
 .img_container {
