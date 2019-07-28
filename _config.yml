@@ -89,8 +89,12 @@ theme_config:
   stylesheets:
     - /css/style.css
     - /css/custom.css
+  nav:
+    Posts: /archives
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/JamaicanMoose/jamaicanmoose.github.io.git
+  branch: master
