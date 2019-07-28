@@ -89,8 +89,7 @@ theme_config:
   stylesheets:
     - /css/style.css
     - /css/custom.css
-  nav:
-    Posts: /archives
+  nav: []
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
