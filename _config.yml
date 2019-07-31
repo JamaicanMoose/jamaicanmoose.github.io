@@ -85,7 +85,7 @@ theme_config:
     Github: https://github.com/JamaicanMoose
   post_copyright_license_enable: false
   post_copyright_slogan_enable: false
-  avatar: /image/avatar.jpg
+  avatar: /image/avatar_smaller.jpeg
   stylesheets:
     - /css/style.css
     - /css/custom.css
