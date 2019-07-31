@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>Projects | John Collins</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">John Collins</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">Home</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">John Collins</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/">Home</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title">Projects</h2>
+        
+        <section class="post-content">
+            <h1 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h1><h3 id="BEEmoji"><a href="#BEEmoji" class="headerlink" title="BEEmoji"></a><a href="https://github.com/JamaicanMoose/discord-beemoji" target="_blank" rel="noopener">BEEmoji</a></h3><p>As avid Discord users, my team at Stevens&#39; DuckHacks 2019 designed and developed a Discord bot to handle image inilining and reuse in messages, essentially better emojis. We have waited for these features to be officially released since we started using Discord but were let down, so we made a bot to do it.</p>
+<h4 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Google AppEngine</li>
+<li>Google Cloud Datastore</li>
+<li>Node.js</li>
+</ul>
+<h3 id="rlearn"><a href="#rlearn" class="headerlink" title="rlearn"></a><a href="https://github.com/JamaicanMoose/rlearn" target="_blank" rel="noopener">rlearn</a></h3><p>Currently all tools for remotely training ML models either require specific hardware or require all of the code to be executed remotely (i.e. on a remote Jupyter notebook). In order to make local and offline development easier I developed a platform agnostic Python package to remotely train arbitrary Keras models.</p>
+<h4 id="Technologies-1"><a href="#Technologies-1" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Keras</li>
+<li>scikit-learn</li>
+<li>Python Websockets</li>
+</ul>
+<h3 id="Ears4Peers-Secure-Chat"><a href="#Ears4Peers-Secure-Chat" class="headerlink" title="Ears4Peers Secure Chat"></a><a href="https://github.com/JumboCode/E4P" target="_blank" rel="noopener">Ears4Peers Secure Chat</a></h3><p>As part of Tufts&#39; JumboCode non-profit software development club, I helped develop a web application to enable Tufts&#39; Ears4Peers volunteers to securely chat with anonymous users.</p>
+<h4 id="Technologies-2"><a href="#Technologies-2" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>socket.io</li>
+<li>Travis CI</li>
+<li>Express</li>
+<li>SQLite</li>
+</ul>
+<h1 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h1><h3 id="personalcapital-js"><a href="#personalcapital-js" class="headerlink" title="personalcapital-js"></a><a href="https://github.com/JamaicanMoose/personalcapital-js" target="_blank" rel="noopener">personalcapital-js</a></h3><p>A Node.js client library for the private PersonalCapital API to allow a user to easily query (and eventually set) data for synced financial accounts.</p>
+<h4 id="Technologies-3"><a href="#Technologies-3" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Node.js</li>
+<li>async/await</li>
+</ul>
+<h3 id="HSHS-Volunteer-App"><a href="#HSHS-Volunteer-App" class="headerlink" title="HSHS Volunteer App"></a><a href="https://github.com/JamaicanMoose/HSHS" target="_blank" rel="noopener">HSHS Volunteer App</a></h3><p>As part of Tufts&#39; JumboCode non-profit software development club, I helped develop a mobile application for optimizing the time and resources of Harvard Square Homeless Shelter&#39;s volunteer street team.</p>
+<h4 id="Technologies-4"><a href="#Technologies-4" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>React Native</li>
+<li>Node.js</li>
+<li>Firebase</li>
+</ul>
+<h3 id="Hammerhead"><a href="#Hammerhead" class="headerlink" title="Hammerhead"></a>Hammerhead</h3><p>Developed as part of a final project for Tufts&#39; Game Development course, Hammerhead is a proof of concept zero gravity physics and interaction library for both room-scale and seated VR experiences. It was demoed as part of SpaceChef, a VR experience giving the player an opportunity to explore a space station while exploiting their cooking machines to cook and deliver meals.</p>
+<h4 id="Technologies-5"><a href="#Technologies-5" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Unity</li>
+</ul>
+<h1 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h1><h3 id="LocalRecipes"><a href="#LocalRecipes" class="headerlink" title="LocalRecipes"></a><a href="https://github.com/JamaicanMoose/localRecipes" target="_blank" rel="noopener">LocalRecipes</a></h3><p>For our final project for Tufts&#39; Web Programming course (COMP20) we developed a web app to find recipes that make use of sustainable ingredients available in the user&#39;s area.</p>
+<h4 id="Technologies-6"><a href="#Technologies-6" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Node.js</li>
+<li>Express</li>
+<li>React.js</li>
+<li>Google Maps API</li>
+</ul>
+<h1 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h1><h3 id="wow-so-langmod-very-click"><a href="#wow-so-langmod-very-click" class="headerlink" title="wow so langmod very click"></a><a href="https://github.com/JamaicanMoose/wow-so-langmod-very-click" target="_blank" rel="noopener">wow so langmod very click</a></h3><p>A testament to the mindlessness of writing articles for Buzzfeed and Cracked, for Tufts Polyhack 2016 my team trained an LSTM language model on popular article titles from Buzzfeed, Cracked, and Reddit along with the Penn Treebank Corpus to score and generate &#39;clickbaity&#39; article titles.</p>
+<h4 id="Technologies-7"><a href="#Technologies-7" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Tensorflow</li>
+<li>Flask</li>
+</ul>
+<h3 id="Wiki-Alexandria"><a href="#Wiki-Alexandria" class="headerlink" title="Wiki Alexandria"></a>Wiki Alexandria</h3><p>A finalist at Hack@Brown 2016, Wiki Alexandria was an attempt at automating the common research practice of using Wikipedia articles as a base for building better queries to academic databases.</p>
+<h4 id="Technologies-8"><a href="#Technologies-8" class="headerlink" title="Technologies"></a>Technologies</h4><ul>
+<li>Django</li>
+<li>Beautiful Soup</li>
+</ul>
+
+        </section>
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Collins | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
