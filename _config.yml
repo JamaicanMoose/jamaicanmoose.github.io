@@ -90,7 +90,9 @@ theme_config:
   stylesheets:
     - /css/style.css
     - /css/custom.css
-  nav: []
+  nav:
+    Home: /
+    Projects: /projects
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
