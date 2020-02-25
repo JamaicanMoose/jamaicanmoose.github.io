@@ -6,7 +6,7 @@ date: 2019-07-30 23:38:58
 # 2019
 
 ### [BEEmoji](https://github.com/JamaicanMoose/discord-beemoji)
-As avid Discord users, my team at Stevens&#39; DuckHacks 2019 designed and developed a Discord bot to handle image inilining and reuse in messages, essentially better emojis. We have waited for these features to be officially released since we started using Discord but were let down, so we made a bot to do it.
+As avid Discord users, my team at Stevens&#39; DuckHacks 2019 designed and developed a Discord bot to handle image inlining and reuse in messages, essentially better emojis. We have waited for these features to be officially released since we started using Discord but were let down, so we made a bot to do it.
 #### Technologies
 - Google AppEngine
 - Google Cloud Datastore

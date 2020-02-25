@@ -93,6 +93,7 @@ theme_config:
   nav:
     Home: /
     Projects: /projects
+    Posts: /archives
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
