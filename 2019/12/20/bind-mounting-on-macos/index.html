@@ -7,7 +7,7 @@
 
 
 
-<title>Hello World | John Collins</title>
+<title>Bind Mounting On macOS | John Collins</title>
 
 
 
@@ -53,6 +53,8 @@
                 
                     <a class="menu-item" href="/projects">Projects</a>
                 
+                    <a class="menu-item" href="/archives">Posts</a>
+                
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
@@ -74,6 +76,8 @@
                     <a class="menu-item" href="/">Home</a>
                 
                     <a class="menu-item" href="/projects">Projects</a>
+                
+                    <a class="menu-item" href="/archives">Posts</a>
                 
             </div>
         </div>
@@ -163,7 +167,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">Bind Mounting On macOS</h1>
             
                 <div class="post-meta">
                     
@@ -172,7 +176,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">July 28, 2019&nbsp;&nbsp;15:23:11</a>
+                        Date: <a href="#">December 20, 2019&nbsp;&nbsp;3:26:12</a>
                         </span>
                     
                     
@@ -181,21 +185,20 @@
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> a <span class="keyword">import</span> b</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>Bind mounts on macos are implemented in the XNU kernel (as nullfs in its BSD components) but are hidden from the user.</p>
+<p>For most uses FUSE elleviates this issue as <a href="https://formulae.brew.sh/formula/bindfs" target="_blank" rel="noopener">bindfs</a> is available for making bind mounts in userspace.</p>
+<p>However for in some cases we might want to make use of the kernel implementation of bind mounts.</p>
+<p>There are three main roadblocks:</p>
+<ol>
+<li>mount_null does not exist</li>
+<li>SIP prevents all programs without the <code>com.apple.private.nullfs_allow</code> entitlement from mounting nullfs</li>
+<li>Normal developers cant give programs private entitlements.</li>
+</ol>
+<h3 id="Building-mount-null"><a href="#Building-mount-null" class="headerlink" title="Building mount_null"></a>Building mount_null</h3><p>Implementing mount_null is as simple as modifying the existing source code for another mount command to mount the implemented nullfs filesystem. We dont actually have to do this because georghe-crihan has done it for us <a href="https://github.com/georghe-crihan/binary-kernel-modules/blob/2a489b7a98d37891b7759b7d9f746ae682ae1bd6/mount_nullfs/mount_null.c" target="_blank" rel="noopener">here</a>.</p>
+<p>Compiling this we get a mount_null binary but it fails with the <code>Operation not permitted</code> error indicating that we need more entitlements to run it.</p>
+<h3 id="Getting-Entitlements"><a href="#Getting-Entitlements" class="headerlink" title="Getting Entitlements"></a>Getting Entitlements</h3><p>Normally getting an Apple private entitlement would require signing the application with an Apple certificate which we obviously cant get.</p>
+<p>The way we can get around this is by signing our program with a root-trusted code signing certificate which we can make for personal use with the guide on <a href="https://sourceware.org/gdb/wiki/PermissionsDarwin" target="_blank" rel="noopener">this</a> page.</p>
+<p>Drawbacks to this way of signing is that our <code>mount_null</code> wont be usable on any other macOS machine without first trusting our root certificate for code signing.</p>
 
         </div>
 
@@ -210,7 +213,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://jcol.me/2019/07/28/hello-world/">https://jcol.me/2019/07/28/hello-world/</a></span>
+                        <span><a href="https://jcol.me/2019/12/20/bind-mounting-on-macos/">https://jcol.me/2019/12/20/bind-mounting-on-macos/</a></span>
                     </p>
                 
                 
@@ -232,6 +235,8 @@
             </div>
         </section>
         <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/02/25/arduino-for-unity-devs/">Arduino for Unity Devs</a>
             
             
         </section>

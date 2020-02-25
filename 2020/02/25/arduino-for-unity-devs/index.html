@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>Arduino for Unity Devs | John Collins</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">John Collins</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">Home</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">John Collins</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/">Home</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Arduino for Unity Devs</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">John Collins</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 25, 2020&nbsp;&nbsp;16:33:13</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Download the <a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Arduino IDE</a></p>
+<p><img src="/image/arduino_ide.png" alt></p>
+<p>The Arduino IDE has a few important controls.</p>
+<ul>
+<li>The check in the top left compiles and verifies the code currently in the view.</li>
+<li>The arrow in the top left compiles and loads the code currently in the view to a connected microcontroller.</li>
+<li>The “Tools” menu has functions to:<ul>
+<li>Manage locally installed libraries</li>
+<li>Monitor serial communication between a microcontroller and the host computer</li>
+<li>Select the serial port you would like to communicate with a microcontroller on</li>
+</ul>
+</li>
+</ul>
+<p>When you initially install the IDE and plug in a natively compatible microcontroller, its serial port should automatically be selected as the default when uploading code.</p>
+<p><strong>Run the Blink program from File-&gt;Examples-&gt;Basic and verify that the onboard LED blinks to check that everything is working properly.</strong></p>
+<p>If you are using a non native microcontroller, ensure you have proper drivers installed.</p>
+<h2 id="Microcontrollers"><a href="#Microcontrollers" class="headerlink" title="Microcontrollers"></a>Microcontrollers</h2><p>Developing on microcontrollers is fundamentally different from developing normal programs due to the microcontrollers lack of operating system and thus lack of scheduling, threads, and similar multitasking concepts. So you only get to run one program at a time on your microcontroller.</p>
+<p>Because of the lack of a scheduler, all code on microcontrollers is triggered on one of three occasions.</p>
+<ol>
+<li><a href="#Setup-Code">On Boot</a></li>
+<li><a href="#Main-Event-Loop">In the Event Loop</a></li>
+<li><a href="#Interrupt-Driven-Code">On An Interrupt</a></li>
+</ol>
+<h3 id="Setup-Code"><a href="#Setup-Code" class="headerlink" title="Setup Code"></a>Setup Code</h3><p>Code run on boot (arduino’s setup function) is run before the main event loop is started. This is typically where all globals, pins and interrupts are setup as well as where any initialization of peripherals (sensors, communication devices, etc) will be.</p>
+<h3 id="Main-Event-Loop"><a href="#Main-Event-Loop" class="headerlink" title="Main Event Loop"></a>Main Event Loop</h3><p>Code run in the event loop (arduino’s loop function) is run on a loop after any setup code. Typically code here is polling or delay driven as it will be run AS OFTEN AS POSSIBLE barring any interrupts. This code can and will be interrupted and as such should not be time sensitive.</p>
+<h3 id="Interrupt-Driven-Code"><a href="#Interrupt-Driven-Code" class="headerlink" title="Interrupt Driven Code"></a>Interrupt Driven Code</h3><p>Code run on interrupts will be run after a physical (pin rising/falling edge) signal and interrupts the currently running code. Interrupts can and should be used to handle transient very short length signals.</p>
+<h2 id="Communication"><a href="#Communication" class="headerlink" title="Communication"></a>Communication</h2><p>While you can write programs that run only on the microcontroller and only interface with purely digital or purely analog components it’s highly unlikely for more complex projects. There are various modes of communication that can be used both to utilize more complex peripherals (IMUs, sensors, …) as well as relay information back to a host computer for a game or another program to utilize.</p>
+<h3 id="Host-Communication"><a href="#Host-Communication" class="headerlink" title="Host Communication"></a>Host Communication</h3><p>There are 3 primary methods of communicating with a host computer that require no extra devices on the host end.</p>
+<h4 id="HID"><a href="#HID" class="headerlink" title="HID"></a>HID</h4><p>Many microcontrollers will have a built in controller for emulating a HID device for which many computers have built in drivers to handle. HID device formats (mouse, keyboard, gamepad) are typically used to communicate standardized inputs like keystrokes, buttons or axis movement from a device back to the host. These inputs are incredibly easy to both send from the microcontroller (usually just requiring a single setup and one function to send the message) and have default handling routines both in Unity and many other programs.</p>
+<p>Alternatively most microcontrollers also support rawHID which will allow you to send arbitrary data using the HID protocol but will need a special driver or processing to interpret.</p>
+<h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>The default mode of communication for microcontrollers is often RS232 serial and almost all development boards will include a USB to rs232 controller both for communication to the host and programming. Rs232 is easy to set up and can pass arbitrary data between two devices. Major operating system libraries have easy polling and async functions for handling and sending data over rs232 ports.</p>
+<p>To easily communicate over serial to Unity we will use the <a href="https://ardity.dwilches.com/" target="_blank" rel="noopener">Ardity</a> Unity package which will handle serial port polling and allow us to use callbacks to handle incoming messages.</p>
+<p>Install Ardity by downloading the Unity package at the link above and running it.</p>
+<h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><p>If the microcontroller you are using is connected or hosts a local ip network then you can communicate between the host and the device using standard ip based protocols like tcp and udp to send arbitrary data with little specialized configuration.</p>
+<h3 id="Peripheral-Communication"><a href="#Peripheral-Communication" class="headerlink" title="Peripheral Communication"></a>Peripheral Communication</h3><p>Peripherals can be communicated with through various means ranging from RS232, SPI and I2C serial protocols to simple digital and analog reading.</p>
+<p>Guides for some of the peripherals we have available are listed here:</p>
+<ul>
+<li><a href="https://create.arduino.cc/projecthub/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-036380" target="_blank" rel="noopener">Ultrasonic Distance Sensor</a></li>
+<li><a href="https://learn.adafruit.com/mpu6050-6-dof-accelerometer-and-gyro?view=all" target="_blank" rel="noopener">Accelerometer/Gyroscope</a></li>
+<li><a href="http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/keyes-ky-040-arduino-rotary-encoder-user-manual/" target="_blank" rel="noopener">Rotary Encoder</a></li>
+<li><a href="https://www.arduino.cc/en/tutorial/pushbutton" target="_blank" rel="noopener">Pushbutton</a></li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>John Collins</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://jcol.me/2020/02/25/arduino-for-unity-devs/">https://jcol.me/2020/02/25/arduino-for-unity-devs/</a></span>
+                    </p>
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2019/12/20/bind-mounting-on-macos/">Bind Mounting On macOS</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Collins | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
